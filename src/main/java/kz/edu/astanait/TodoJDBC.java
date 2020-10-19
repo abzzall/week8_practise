@@ -44,9 +44,25 @@ public class TodoJDBC {
             ps.setString(1, todo.getTask());
             ps.executeUpdate();
             ps.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return todo;
+    }
+
+    public void delete(int id) {
+        System.out.println("Delete:"+id);
+        String sql = "DELETE FROM todo WHERE id = ?";
+        try {
+            Connection connection = getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ps.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
