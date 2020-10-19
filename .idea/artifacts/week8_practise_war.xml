@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="week8_practise:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>week8_practise</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="week8_practise-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="week8_practise:war exploded" />
+    </root>
+  </artifact>
+</component>
