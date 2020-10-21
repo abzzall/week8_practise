@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/servlet")
 public class Servlet extends HttpServlet {
+    /*Answer to post method*/
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String task = req.getParameter("task");
@@ -16,7 +17,7 @@ public class Servlet extends HttpServlet {
         TodoJDBC.getInstance().create(todo);
         resp.sendRedirect("index.jsp");
     }
-
+    /*Answer to delete method*/
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = req.getParameter("id") != null ? Integer.parseInt(req.getParameter("id")) : 0;
